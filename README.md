@@ -182,3 +182,25 @@ Not implemented yet — mentioned here for context:
 │   └── architecture.md        # Mermaid diagrams + system-model assumptions
 └── logs/                      # gitignored, mounted as a volume
 ```
+
+Milestone 2: Communication Mechanisms (CECS 327)
+Required Software
+Python: Python 3.9 or higher (python3 --version)
+Operating System: macOS, Linux, or Windows (PowerShell / WSL2)
+Network Ports Used (Localhost 127.0.0.1):
+Milestone 1 Control Plane: 8000 (API Gateway), 8001 (User Service), 8002 (Playlist Service), 8003 (Catalog Service)
+Milestone 2 Communication Plane:
+8004 — Playback Session Service (TCP Socket Request-Reply & Event Publisher)
+8005 — Pub-Sub Event Broker (TCP Socket Topic Router)
+8006 — Recommendation Service (TCP Socket Subscriber 1)
+8007 — Catalog Analytics Service (TCP Socket Subscriber 2)
+9001, 9002, 9003 — P2P Audio Chunk Swarm Nodes (PeerNode-1, PeerNode-2, PeerNode-3 on UDP Sockets)
+
+How to Install Dependencies
+The Milestone 2 communication engine (milestone2_system.py) is built entirely with Python's standard library (socket, struct, json, threading, datetime, uuid), so no external packages are required to run Milestone 2.
+
+```bash
+git clone [https://github.com/Dakshaarvind/music-streaming-system.git](https://github.com/Dakshaarvind/music-streaming-system.git)
+cd music-streaming-system
+Optional (only needed if running Milestone 1 HTTP services):
+pip install -r requirements.txt

@@ -217,7 +217,7 @@ To execute the P2P network behavior and generate the terminal output for the vid
     ```bash
     python3 milestone3_p2p.py
     ```
-This script automatically orchestrates the startup, join, lookup, and leave procedures across four threaded local peer nodes (Ports 9001-9004)[cite: 2]. 
+This script automatically orchestrates the startup, join, lookup, and leave procedures across four threaded local peer nodes (Ports 9001-9004). 
 
 ### How to Reproduce the Test Cases
 The script `milestone3_p2p.py` is structured as a chronological sequence of automated test cases. Running the file automatically reproduces:

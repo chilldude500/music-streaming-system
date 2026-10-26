@@ -31,7 +31,7 @@ just to run the services in Docker):
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-```
+
 
 ## Start everything
 

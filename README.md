@@ -31,7 +31,7 @@ just to run the services in Docker):
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-
+```
 
 ## Start everything
 
@@ -199,11 +199,6 @@ Milestone 2 Communication Plane:
 How to Install Dependencies
 The Milestone 2 communication engine (milestone2_system.py) is built entirely with Python's standard library (socket, struct, json, threading, datetime, uuid), so no external packages are required to run Milestone 2.
 
-```bash
-git clone [https://github.com/Dakshaarvind/music-streaming-system.git](https://github.com/Dakshaarvind/music-streaming-system.git)
-cd music-streaming-system
-Optional (only needed if running Milestone 1 HTTP services):
-pip install -r requirements.txt
 
 
 ## Milestone 3: P2P Integration (Chord DHT)

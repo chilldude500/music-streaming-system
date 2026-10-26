@@ -203,23 +203,23 @@ The Milestone 2 communication engine (milestone2_system.py) is built entirely wi
 
 ## Milestone 3: P2P Integration (Chord DHT)
 
-### Required Software[cite: 4]
+### Required Software
 *   Python 3.11+ (Local environment recommended for P2P simulation).
 *   No external pip dependencies are required for the P2P engine.
 
-### How to Install Dependencies[cite: 4]
+### How to Install Dependencies
 The P2P overlay `milestone3_p2p.py` is built entirely using Python's standard library (`hashlib`, `socket`, `threading`, `json`). No installation is required beyond a standard Python 3.11 environment.
 
-### How to Start Each Service and Run the Demo[cite: 4]
+### How to Start Each Service and Run the Demo
 To execute the P2P network behavior and generate the terminal output for the video submission:
 1.  Navigate to the repository root.
-2.  Execute the standalone demo script:
+2.  Execute the script:
     ```bash
     python3 milestone3_p2p.py
     ```
 This script automatically orchestrates the startup, join, lookup, and leave procedures across four threaded local peer nodes (Ports 9001-9004)[cite: 2]. 
 
-### How to Reproduce the Test Cases[cite: 4]
+### How to Reproduce the Test Cases
 The script `milestone3_p2p.py` is structured as a chronological sequence of automated test cases. Running the file automatically reproduces:
 1.  **Network Bootstrap:** Nodes 9001, 9002, 9003 instantiate and form the base ring.
 2.  **Peer Join:** Node 9004 is instantiated and routes a `FIND_SUCCESSOR` request to insert itself into the hash space.

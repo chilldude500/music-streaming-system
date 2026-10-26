@@ -204,3 +204,29 @@ git clone [https://github.com/Dakshaarvind/music-streaming-system.git](https://g
 cd music-streaming-system
 Optional (only needed if running Milestone 1 HTTP services):
 pip install -r requirements.txt
+
+
+## Milestone 3: P2P Integration (Chord DHT)
+
+### Required Software[cite: 4]
+*   Python 3.11+ (Local environment recommended for P2P simulation).
+*   No external pip dependencies are required for the P2P engine.
+
+### How to Install Dependencies[cite: 4]
+The P2P overlay `milestone3_p2p.py` is built entirely using Python's standard library (`hashlib`, `socket`, `threading`, `json`). No installation is required beyond a standard Python 3.11 environment.
+
+### How to Start Each Service and Run the Demo[cite: 4]
+To execute the P2P network behavior and generate the terminal output for the video submission:
+1.  Navigate to the repository root.
+2.  Execute the standalone demo script:
+    ```bash
+    python3 milestone3_p2p.py
+    ```
+This script automatically orchestrates the startup, join, lookup, and leave procedures across four threaded local peer nodes (Ports 9001-9004)[cite: 2]. 
+
+### How to Reproduce the Test Cases[cite: 4]
+The script `milestone3_p2p.py` is structured as a chronological sequence of automated test cases. Running the file automatically reproduces:
+1.  **Network Bootstrap:** Nodes 9001, 9002, 9003 instantiate and form the base ring.
+2.  **Peer Join:** Node 9004 is instantiated and routes a `FIND_SUCCESSOR` request to insert itself into the hash space.
+3.  **Lookup & Discovery:** A client generates a SHA-1 hash for `track_101_chunk_01.aac` and issues a lookup. The nodes traverse their successor pointers until the responsible node is located and the chunk is cached.
+4.  **Graceful Leave:** Node 9002 executes the `leave()` method, issuing `UPDATE_SUCCESSOR` and `NOTIFY` messages to heal the ring before closing its socket.
